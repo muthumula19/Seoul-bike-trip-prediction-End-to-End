@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Seouel Bike trip predection</title>
+        <style>
+            body{
+                background-image: url(bike.jpg);
+                background-size: cover;
+            }
+            h1{
+                text-align: center;
+            }
+            form{
+                text-align: center;
+            }
+            label{
+                font-size: 20px;
+                display: inline-block;
+                width: 150px;
+                text-align: right;
+            
+            }
+            input{
+                width: 17%;
+            }
+            input[id='submit']{
+                width: 10%;
+                color: rgb(162, 0, 255);
+                
+               
+            }
+            p{
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="background-color:rgb(55, 111, 184);">Souel Bike trip prediction</h1>
+        <p>In this we are going to predict Duration take to complete trip in Souel city
+            In this we giving feature like when you are going to start trip and you have Environmental like 
+            Temperature,Humidity,Solar,WindSpeed,Precpitation,Snow,GroundTemperature etc..
+        </p>
+        <form action="/predict" method="POST">
+            <label for="month">Month</label>
+            <input type="number" id='month' name='Pmonth' required='required' placeholder="Enter value... " min="1" max="12"><br>
+            <label for="PDweek">Day in week</label>
+            <input type="number" id='PDweek' name='PDweek' required='required' placeholder="Enter value..." min="0" max="6"><br>
+            <label for="day">Day in Month</label>
+            <input type="number" id='day' name='Pday' required='required' placeholder="Enter value..." min="1" max="31"><br>
+            <label for="hour">Hour</label>
+            <input type="number" id='hour' name='Phour' required='required' placeholder="Enter value..." min="0" max="24"><br>
+            <label for="min">Minutes</label>
+            <input type="number" id='min' name='Pmin' required='required' placeholder="Enter value..." min="0" max="60"><br>
+            <label for="Temp">Temperature</label>
+            <input type="text" id="Temp" name='Temp' required='required' placeholder="Enter value..."><br>
+            <label for="precpi">Precpitation</label>
+            <input type="text" id='precpi' name='Precip' required='required' placeholder="Enter value..."><br>
+            <label for="wind">WindSpeed</label>
+            <input type="text" id='wind' name='Wind' required='required' placeholder="Enter value..."><br>
+            <label for="Humid">Humidity</label>
+            <input type="text" id='Humid' name='Humid' required='required' placeholder="Enter value..."><br>
+            <label for="Solar">Solar</label>
+            <input type="text" id='Solar' name='Solar' required='required' placeholder="Enter value..."><br>
+            <label for="Snow">Snow</label>
+            <input type="text" id='Snow' name='Snow' required='required' placeholder="Enter value..."><br>
+            <label for="GroundTemp">GroundTemperature</label>
+            <input type="text" id='GroundTemp' name='GroundTemp' required='required' placeholder="Enter value..."><br>
+            <label for="Dust">Dust</label>
+            <input type="text" id='Dust' name='Dust' required='required' placeholder="Enter value..."><br><br>
+            <label ></label>
+            <input type="submit" id='submit' value="Click to predict">
+        </form>
+        <br><br>
+        <center><h3>{{results}}</h3></center>
+    </body>
+</html>
